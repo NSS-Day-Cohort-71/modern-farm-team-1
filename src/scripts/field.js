@@ -1,3 +1,4 @@
+
 let field = [] // array where the seeds will be planted
 
 // function to add plants to the field
