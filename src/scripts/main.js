@@ -26,3 +26,4 @@ console.log(sunflowerSeed)
 
 const wheatSeed = createWheat()
 console.log(wheatSeed)
+
