@@ -1,0 +1,45 @@
+title Modern Farm Team 1 Sequence Diagram
+
+participant main.js
+participant plan.js
+participant seeds.js (6 plant types)
+participant field.js
+participant tractor.js
+participant harvester.js
+participant catalog.js
+
+main.js-->>plan.js: IMPORT createPlan()
+abox over plan.js:createPlan()
+plan.js-->>main.js: EXPORT createPlan()
+rbox over main.js,plan.js:Invoke createPlan()
+box over main.js:const yearlyPlan // stores returned value from createPlan()
+
+main.js-->>seeds.js (6 plant types): IMPORT createSeeds()
+abox over seeds.js (6 plant types):createSeeds()
+seeds.js (6 plant types)-->>main.js: EXPORT createSeeds()
+rbox over main.js,seeds.js (6 plant types): Invoke createSeeds()
+
+main.js-->>field.js: IMPORT addPlant(seedObject), usePlants()
+abox over field.js: addPlant(seedObject)
+abox over field.js: usePlants()
+field.js-->>main.js: EXPORT addPlant(seedObject), usePlants()
+box over main.js: Create seedObject
+rbox over main.js,field.js: Invoke addPlant(seedObject)
+rbox over main.js,field.js: Invoke usePlants()
+
+main.js-->>tractor.js: IMPORT plantSeeds(plantingPlan)
+abox over tractor.js: plantSeeds(plantingPlan)
+seeds.js (6 plant types)-->>tractor.js: IMPORT createSeeds()
+field.js-->>tractor.js: IMPORT addPlant(seedObject)
+tractor.js-->>main.js: EXPORT plantSeeds(plantingPlan)
+rbox over main.js,tractor.js: Invoke plantSeeds(plantingPlan)
+
+main.js-->>harvester.js: IMPORT harvestPlants(plantsArray)
+abox over harvester.js: harvestPlants(plantsArray)
+harvester.js-->>main.js: EXPORT harvestPlants(plantsArray)
+rbox over main.js,harvester.js: Invoke harvestPlants(plantsArray)
+
+main.js-->>catalog.js: IMPORT catalog(harvestedFoodArr)
+abox over catalog.js: catalog(harvestedFoodArr)
+catalog.js-->>main.js: EXPORT catalog(harvestedFoodArr)
+rbox over main.js,catalog.js: Invoke catalog(harvestedFoodArr)
