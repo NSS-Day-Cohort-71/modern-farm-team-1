@@ -7,7 +7,7 @@ export const catalog = (foodArr) => {
     let mainElHtml = ``
     foodArr.forEach(food => {
         mainElHtml += `
-            <section class="plant">${food.type}</section>
+            <section class="plant">${food.type}:${food.output}</section>
         ` 
     });
     return mainElHtml
