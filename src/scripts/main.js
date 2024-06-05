@@ -18,5 +18,3 @@ harvestedCrops.sort((a, b) => a.type.localeCompare(b.type))
 const catalogContainer = document.querySelector(".container");
 const catalogHtml = catalog(harvestedCrops);
 catalogContainer.innerHTML = catalogHtml;
-
-
