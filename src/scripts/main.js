@@ -1,35 +1,19 @@
 import { createPlan } from "./plan.js";
-import { createAsparagus } from "./seeds/asparagus.js";
-import { createCorn } from "./seeds/corn.js";
-import { createPotato } from "./seeds/potato.js";
-import { createSoybean } from "./seeds/soybean.js";
-import { createSunflower } from "./seeds/sunflower.js";
-import { createWheat } from "./seeds/wheat.js";
 import { plantSeeds } from "./tractor.js";
-
+import { usePlants } from "./field.js";
+import { harvestPlants } from "./harvester.js";
+import { catalog } from "./catalog.js";
 
 const yearlyPlan = createPlan();
 
-// Test seed creation functions
-const asparagusSeed = createAsparagus()
-console.log(asparagusSeed)
+plantSeeds(yearlyPlan);
 
-const cornSeed = createCorn()
-console.log(cornSeed)
+const harvestPlan = usePlants();
 
-const potatoSeed = createPotato()
-console.log(potatoSeed)
+const harvestedCrops = harvestPlants(harvestPlan);
 
-const soybeanSeed = createSoybean()
-console.log(soybeanSeed)
-
-const sunflowerSeed = createSunflower()
-console.log(sunflowerSeed)
-
-const wheatSeed = createWheat()
-console.log(wheatSeed)
-
-const tractorPlants = plantSeeds();
-
+const catalogContainer = document.querySelector(".container");
+const catalogHtml = catalog(harvestedCrops);
+catalogContainer.innerHTML = catalogHtml;
 
 
