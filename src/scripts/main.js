@@ -21,5 +21,3 @@ const combinedCrops = combineOutputs(sortedCrops)
 const catalogContainer = document.querySelector(".container");
 const catalogHtml = catalog(combinedCrops);
 catalogContainer.innerHTML = catalogHtml;
-
-
