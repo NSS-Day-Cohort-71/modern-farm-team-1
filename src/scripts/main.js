@@ -16,3 +16,4 @@ const catalogContainer = document.querySelector(".container");
 const catalogHtml = catalog(harvestedCrops);
 catalogContainer.innerHTML = catalogHtml;
 
+

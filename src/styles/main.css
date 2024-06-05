@@ -34,3 +34,12 @@ h1,h2,h3,h4,h5,h6 {
     background-color: darksalmon;
 }
 
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.plant {
+    padding: 50px;
+    font-size: 70px;
+}
