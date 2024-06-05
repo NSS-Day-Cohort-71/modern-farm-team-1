@@ -12,6 +12,9 @@ const harvestPlan = usePlants();
 
 const harvestedCrops = harvestPlants(harvestPlan);
 
+// Alphabetize the food list
+harvestedCrops.sort((a, b) => a.type.localeCompare(b.type))
+
 const catalogContainer = document.querySelector(".container");
 const catalogHtml = catalog(harvestedCrops);
 catalogContainer.innerHTML = catalogHtml;
