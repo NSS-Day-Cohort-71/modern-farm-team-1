@@ -1,7 +1,7 @@
 // Define and export createPotato function
 export const createPotato = () => (
     {
-        tpye: "Potato",
+        type: "Potato",
         height: 32,
         output: 2
     }
