@@ -1,9 +1,9 @@
 import { createAsparagus} from './seeds/asparagus.js';
-import { createSoybean} from './seeds/soybean';
-import { createSunflower } from './seeds/sunflower';
-import { createWheat} from './seeds/wheat'
-import { createPotato} from './seeds/potato'
-import { createCorn} from './seeds/corn'
+import { createSoybean} from './seeds/soybean.js';
+import { createSunflower } from './seeds/sunflower.js';
+import { createWheat} from './seeds/wheat.js';
+import { createPotato} from './seeds/potato.js';
+import { createCorn} from './seeds/corn.js';
 import { addPlant } from './field.js';
 
 export function plantSeeds(plan) {
