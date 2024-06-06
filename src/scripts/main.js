@@ -9,13 +9,18 @@ import { imgCatalog } from "./imgCatalog.js";
 import { barn } from "./storageBarn.js";
 
 const yearlyPlan = createPlan();
-
 plantSeeds(yearlyPlan);
-
 const harvestPlan = usePlants();
-
 const harvestedCrops = harvestPlants(harvestPlan);
 
+// Optional Challenges: storage barn stack
+const storageBarn = barn()
+
+harvestedCrops.forEach(crop => {
+    storageBarn.push(crop)
+})
+
+// ----- DOM DISPLAY OPTIONS ----- //
 const catalogContainer = document.querySelector(".container");
 
 // Core Requirements: Selling the Harvest
@@ -26,17 +31,6 @@ catalogContainer.innerHTML = catalogHtml;
 // const sortedCrops = harvestedCrops.sort((a, b) => a.type.localeCompare(b.type))
 // const catalogHtml = catalog(sortedCrops);
 // catalogContainer.innerHTML = catalogHtml;
-
-//Optional Challenges: storage barn stack
-const storageBarn =barn()
-harvestedCrops.forEach(crop => {
-    storageBarn.push(crop)
-})
-
-console.log(storageBarn.peek())
-console.log(storageBarn.pop())
-console.log('the current amount of crops in the storage barn are ' + storageBarn.push())
-console.log(storageBarn.isEmpty())
 
 // Optional Challenges: Display Once With Quantity
 // const combinedCrops = combineOutputs(harvestedCrops)
